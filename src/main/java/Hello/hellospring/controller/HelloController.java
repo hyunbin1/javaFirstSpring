@@ -30,14 +30,15 @@ public class HelloController {
 
 
     // 진짜 사용할만한 데이터 API - json 형식
-    @GetMapping("hello-api")
+    @GetMapping("hello-api") //html 파일
     @ResponseBody
+    // 객체 생성&사용: 클래스명 + 변수명 = new 클래스명();
     public Hello helloApi(@RequestParam("name") String name) {
         Hello hello = new Hello();
         hello.setName(name);
         return hello;
     }
-
+    // 클래스 만들기
     static class Hello {
         private String name;
          // 꺼낼때
