@@ -20,7 +20,7 @@ class MemberServiceTest {
         //then - 검증부
         // 레퍼지토리에서 가져와서 찾기
         Member findMember = memberService.findOne(saveId).get();
-        assertThat(member.getId(), is(equalTo(findMember.getName())));
+        assertThat(member.getName(), is(equalTo(findMember.getName())));
 
     }
 
