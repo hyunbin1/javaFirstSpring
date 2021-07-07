@@ -3,11 +3,13 @@ package Hello.hellospring.Service;
 import Hello.hellospring.domain.Member;
 import Hello.hellospring.repository.MemberRepository;
 import Hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -17,7 +19,6 @@ public class MemberService {
     }
 
     //회원가입
-
     public Long join(Member member){
         validateDuplicateMember(member);
         memberRepository.save(member);
